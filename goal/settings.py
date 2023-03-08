@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-uqcv3wr#-(=t*3giv+iz3xcect3b=372p&%t-h3fcr2n!dpym5
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-CSRF_TRUSTED_ORIGINS = ['https://flance.works/', 'https://www.flance.works/']
+CSRF_TRUSTED_ORIGINS = ['https://flance.works', 'https://www.flance.works']
 ALLOWED_HOSTS = ['*']
 
 
