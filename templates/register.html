@@ -1,0 +1,56 @@
+<!-- <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">register</button>
+  </form> -->
+
+  <!DOCTYPE html>
+  {% load static %}
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <title>Giriş Yap</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="screen">
+        <div class="screen__content">
+          <form method="POST" action="." class="login">
+            {% csrf_token %}
+            <div class="login__field">
+              <i class="login__icon fas fa-user"></i>
+              <input name="email" type="email" class="login__input" placeholder="Email">
+            </div>
+            <div class="login__field">
+              <i class="login__icon fas fa-lock"></i>
+              <input name="password" type="password" class="login__input" placeholder="Password">
+            </div>
+            <div class="login__field">
+              <i class="login__icon fas fa-lock"></i>
+              <input name="confirm" type="password" class="login__input" placeholder="Confirm Password">
+            </div>
+            <button type="submit" class="button login__submit">
+              <span class="button__text">Register Now</span>
+              <i class="button__icon fas fa-chevron-right"></i>
+            </button>				
+          </form>
+          <div class="text-center">
+            <a style="text-decoration:none;" href="{% url 'login' %}">Zaten bit hesabın var mı?</a>
+          </div>
+          </div>
+        </div>
+        <div class="screen__background">
+          <span class="screen__background__shape screen__background__shape4"></span>
+          <span class="screen__background__shape screen__background__shape3"></span>		
+          <span class="screen__background__shape screen__background__shape2"></span>
+          <span class="screen__background__shape screen__background__shape1"></span>
+        </div>		
+      </div>
+    </div>
+  </body>
+  </html>

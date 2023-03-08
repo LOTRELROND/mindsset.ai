@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+
+{% block content %}
+    <h1>Favorites</h1>
+    <hr>
+    {% for fav in favs %}
+    <div class="card" style="margin-top: 10px;">
+        <div class="card-header">
+            <h5 class="card-title">{{fav.post.title}}</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{fav.post.content | linebreaks}}</p>
+        </div>
+        <div class="card-footer">
+            created date: {{fav.post.date}}{% if fav.post.link %}
+            ~<a href="{{fav.post.link}}" target="_blank">incele</a>
+            {% endif %}
+            <i data-post ={{fav.post.id}} data-action ="remove" class="fa-solid fa-trash-can chg-quantity update-fav"></i>          
+        </div>
+      </div>
+    {% endfor %}
+{% endblock content %}
