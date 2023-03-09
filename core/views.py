@@ -53,3 +53,13 @@ def fav(request):
     }
     return render(request, "fav.html",context)
 
+def postdetail(request, slug):
+    post = Post.objects.get(slug=slug)
+    pastPost = Post.objects.get(id=(post.id-1))
+    nextPost = Post.objects.get(id=(post.id+1))
+    context={
+        'post':post,
+        'pastPost':pastPost,
+        'nextPost':nextPost,
+    }
+    return render(request, 'postdetail.html', context)
