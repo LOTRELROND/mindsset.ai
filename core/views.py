@@ -55,8 +55,14 @@ def fav(request):
 
 def postdetail(request, slug):
     post = Post.objects.get(slug=slug)
-    pastPost = Post.objects.get(id=(post.id-1))
-    nextPost = Post.objects.get(id=(post.id+1))
+    try:
+        pastPost = Post.objects.get(id=(post.id-1))
+    except:
+        pastPost = Post.objects.get(id=1)
+    try:
+        nextPost = Post.objects.get(id=(post.id+1))
+    except:
+        nextPost = Post.objects.get(id=1)
     context={
         'post':post,
         'pastPost':pastPost,

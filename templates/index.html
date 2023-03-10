@@ -90,7 +90,7 @@
           </div>
           <div class="card-footer">
               created date: {{post.date}}{% if post.link %}
-              ~<a href="{{post.link}}" target="_blank">incele</a>
+              ~<a href="{{post.link}}" target="_blank">Show on the instagram</a>
               {% endif %}
               <i data-post={{post.id}} data-action="add"  style = " margin-left: 10px; height:25px; width:auto; " class="fa-solid fa-heart-circle-plus favi update-fav"></i>
               <a href="{% url 'postdetail' slug=post.slug %}">Read More</a>
