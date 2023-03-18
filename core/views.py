@@ -6,13 +6,20 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
-
     posts = Post.objects.filter(active=True)
-
+    deger = "en yeni"
+    if request.method == "POST":
+        deger = request.POST.get("tarih")
+        
+        if deger == "en yeni":
+            posts = Post.objects.filter(active=True).order_by('-date')
+        elif deger == "en eski":
+            posts = Post.objects.filter(active=True).order_by('date')
 
 
     context = {
         'posts':posts,
+        'deger':deger,
     }
     return render(request, "index.html", context)
 
