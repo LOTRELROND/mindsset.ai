@@ -35,7 +35,7 @@ class Post(models.Model):
         super(Post, self).save(*args, **kwargs)
 
     class Meta:
-        ordering = ["-date"]
+        ordering = ["date"]
 
 class FavItem(models.Model):
     post = models.ForeignKey(Post, on_delete=models.SET_NULL, blank=True, null=True)
