@@ -10,7 +10,7 @@ class PostAdmin(admin.ModelAdmin):
 
     list_display=['title', 'date', 'active']
 
-    search_fields = ['titles']
+    search_fields = ['title']
 
     list_filter = ['date']
 
