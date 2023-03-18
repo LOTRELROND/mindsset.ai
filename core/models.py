@@ -19,11 +19,11 @@ class Visiter(models.Model):
         super(Visiter, self).save(*args, **kwargs)
 
 class Post(models.Model):
-    title = models.CharField(max_length=80)
-    content = models.TextField()
+    title = models.CharField(max_length=80, verbose_name="Başlık")
+    content = models.TextField(verbose_name="içerik")
     slug = models.SlugField(max_length=400, unique=True, blank=True)
-    date = models.DateTimeField(auto_now_add=True)
-    active = models.BooleanField(default=True)
+    date = models.DateTimeField(auto_now_add=True, verbose_name="Oluşturulma tarihi")
+    active = models.BooleanField(default=True, verbose_name="Yayında")
     link = models.URLField(max_length=200, blank=True)
 
     def __str__(self):
