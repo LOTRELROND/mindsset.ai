@@ -34,6 +34,8 @@ class Post(models.Model):
             self.slug = slugify(self.title)
         super(Post, self).save(*args, **kwargs)
 
+    class Meta:
+        ordering = ["-date"]
 
 class FavItem(models.Model):
     post = models.ForeignKey(Post, on_delete=models.SET_NULL, blank=True, null=True)

@@ -9,6 +9,8 @@ def index(request):
 
     posts = Post.objects.filter(active=True)
 
+
+
     context = {
         'posts':posts,
     }
