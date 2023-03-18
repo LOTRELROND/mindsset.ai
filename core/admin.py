@@ -7,6 +7,12 @@ admin.site.register(Visiter),
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
+
     list_display=['title', 'date', 'active']
+
+    search_fields = ['titles']
+
+    list_filter = ['date']
+
     class Meta:
         model = Post
