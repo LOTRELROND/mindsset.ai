@@ -138,8 +138,8 @@ EMAIL_FROM_USER = ''
 
 EMAIL_USE_TLS = True  
 EMAIL_HOST = 'smtp.gmail.com'  
-EMAIL_HOST_USER = 'mehmetkemalkayam@gmail.com'  
-EMAIL_HOST_PASSWORD = 'trkgcksdmxkwdoih'  
+EMAIL_HOST_USER = 'host@gmail.com'  
+EMAIL_HOST_PASSWORD = 'host-password'  
 EMAIL_PORT = 587
 
 
